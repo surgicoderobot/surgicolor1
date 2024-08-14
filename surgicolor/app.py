@@ -33,6 +33,7 @@ structures = {
 def find_image_set(structure_name):
     while True:
         archive_path = random.choice(os.listdir('surgicolor/image_data'))
+        print(archive_path)
         full_archive_path = f'image_data/{archive_path}'
         
         # Check if the necessary images exist
