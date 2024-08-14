@@ -83,10 +83,10 @@ st.write(f"Now, color the selected structure '{st.session_state.current_structur
 # Load the third image
 third_image = Image.open(third_image_path)
 st.write(third_image_path)
-st.write(third_image.shape)
+
 # Convert the image to a format suitable for Streamlit canvas
 image_array = np.array(third_image)
-
+st.write(image_array.shape)
 # Drawing canvas directly on the third image
 canvas_result = st_canvas(
     fill_color=st.session_state.current_color,  # Use the color specific to the selected structure
