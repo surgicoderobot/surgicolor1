@@ -78,12 +78,12 @@ for i, (original, colored) in enumerate(st.session_state.image_set):
 # Display a third image with the same structure for the player to color
 third_image_path = st.session_state.image_set[st.session_state.current_image_index][0]
 print(third_image_path)
-
 st.write(f"Now, color the selected structure '{st.session_state.current_structure}' in the image below:")
 
 # Load the third image
 third_image = Image.open(third_image_path)
 st.write(third_image_path)
+st.write(third_image.shape)
 # Convert the image to a format suitable for Streamlit canvas
 image_array = np.array(third_image)
 
