@@ -85,7 +85,7 @@ third_image = Image.open(third_image_path)
 st.write(third_image_path)
 
 # Convert the image to a format suitable for Streamlit canvas
-image_array = np.array(third_image)
+image_array = np.array(third_image.convert("RGBA"))
 st.write(image_array.shape)
 # Drawing canvas directly on the third image
 canvas_result = st_canvas(
