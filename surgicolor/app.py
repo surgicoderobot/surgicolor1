@@ -33,7 +33,6 @@ structures = {
 def find_image_set(structure_name):
     
     archive_path = random.choice(os.listdir('surgicolor/image_data'))
-    print(archive_path, st.session_state.structure_index)
     full_archive_path = f'image_data/{archive_path}'
     
     # Check if the necessary images exist
@@ -55,6 +54,8 @@ if "structure_index" not in st.session_state:
 
 # Get a new structure and image set when the button is clicked
 if st.button('Go to Next Image') or st.session_state.structure_index == -1:
+    if st.session_state.structure_index == -1:
+         print(archive_path, st.session_state.structure_index)
     # Choose a new structure
     st.session_state.structure_index = (st.session_state.structure_index + 1) % len(structures)
     st.session_state.current_structure = list(structures.keys())[st.session_state.structure_index]
