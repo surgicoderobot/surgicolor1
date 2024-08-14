@@ -115,7 +115,7 @@ if st.button('Save and Next'):
         combined_image = np.where(
             drawing_array[:, :, 3:] != 0,  # If drawing data is not transparent
             drawing_array[:, :, :3],  # Use the drawing image
-            image_array  # Otherwise use the original image
+            image_array[:, :, :3]  # Otherwise use the original image
         )
         
         # Convert back to PIL Image
