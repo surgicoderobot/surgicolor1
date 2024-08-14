@@ -84,11 +84,12 @@ third_image = Image.open(third_image_path)
 
 # Convert the image to a format suitable for Streamlit canvas
 image_array = np.array(third_image)
+print(image_array.shape)
 
 # Drawing canvas directly on the third image
 canvas_result = st_canvas(
     fill_color=st.session_state.current_color,  # Use the color specific to the selected structure
-    stroke_width=3,
+    stroke_width=20,
     stroke_color=st.session_state.current_color,
     background_image=third_image,  # Set the third image as the background
     height=image_array.shape[0],
