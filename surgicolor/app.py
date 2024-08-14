@@ -54,8 +54,6 @@ if "structure_index" not in st.session_state:
 
 # Get a new structure and image set when the button is clicked
 if st.button('Go to Next Image') or st.session_state.structure_index == -1:
-    if st.session_state.structure_index == -1:
-         print(archive_path, st.session_state.structure_index)
     # Choose a new structure
     st.session_state.structure_index = (st.session_state.structure_index + 1) % len(structures)
     st.session_state.current_structure = list(structures.keys())[st.session_state.structure_index]
