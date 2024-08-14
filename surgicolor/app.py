@@ -31,15 +31,15 @@ structures = {
 
 # Function to find matching images in the archive
 def find_image_set(structure_name):
-    
-    archive_path = random.choice(os.listdir('surgicolor/image_data'))
-    full_archive_path = f'surgicolor/image_data/{archive_path}'
-    
-    # Check if the necessary images exist
-    if os.path.exists(f'{full_archive_path}/image.png') and os.path.exists(f'{full_archive_path}/{structure_name}.png'):
-        original_image = f'{full_archive_path}/image.png'
-        colored_image = f'{full_archive_path}/{structure_name}.png'
-        return original_image, colored_image
+    while True:
+        archive_path = random.choice(os.listdir('surgicolor/image_data'))
+        full_archive_path = f'surgicolor/image_data/{archive_path}'
+        
+        # Check if the necessary images exist
+        if os.path.exists(f'{full_archive_path}/image.png') and os.path.exists(f'{full_archive_path}/{structure_name}.png'):
+            original_image = f'{full_archive_path}/image.png'
+            colored_image = f'{full_archive_path}/{structure_name}.png'
+            return original_image, colored_image
 
 # Function to save the colored image
 def save_colored_image(image, structure_name, image_number):
